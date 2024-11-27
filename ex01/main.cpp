@@ -6,21 +6,20 @@
 
 int	main(void)
 {
-	Cat	a;
-
-	a.show_ideas();
-	a.new_idea("manger");
-	Cat b = a;
-	b.show_ideas();
-	/*Animal *tab[4];
+	Animal *tab[4];
+	Dog a;
+	Dog b(a);
+	b.showIdeas();
+	a.newIdea("manger");
+	b.showIdeas();
 	for (int i = 0 ; i < 4 ; i++)
 	{
 		if (i % 2 == 0)
-			tab[i] = new Dog();
-		else
 			tab[i] = new Cat();
+		else
+			tab[i] = new Dog();
 	}
-	for (int k = 0 ; k < 4 ; k++)
-		delete tab[k];*/
+	for (int i = 0 ; i < 4 ; i++)
+		delete tab[i];
 	return (0);
 }
