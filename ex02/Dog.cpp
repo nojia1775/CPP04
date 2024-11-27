@@ -2,14 +2,15 @@
 
 Dog::Dog(void) : Animal()
 {
-	brain = new Brain();
+	_brain = new Brain();
 	_type = "Dog";
 	std::cout << "Dog constructor called" << std::endl;
 }
 
 Dog::Dog(const Dog& other) : Animal(other)
 {
-	brain = other.brain;
+	std::cout << "Copy constructor Dog called" << std::endl;
+	_brain = new Brain(*other._brain);
 	this->_type = other._type;
 }
 
@@ -17,7 +18,8 @@ Dog	&Dog::operator=(const Dog& other)
 {
 	if (this != &other)
 	{
-		brain = other.brain;
+		delete _brain;
+		_brain = new Brain(*other._brain);
 		this->_type = other._type;
 	}
 	return (*this);
@@ -25,7 +27,7 @@ Dog	&Dog::operator=(const Dog& other)
 
 Dog::~Dog(void)
 {
-	delete brain;
+	delete _brain;
 	std::cout << "Dog destructor called" << std::endl;
 }
 
@@ -34,21 +36,29 @@ void	Dog::makeSound(void) const
 	std::cout << "Wouf" << std::endl;
 }
 
-void	Dog::new_idea(std::string idea)
+void	Dog::newIdea(std::string idea)
 {
 	int	i;
 
-	i = 0;
-	while (i < 100 && brain->ideas[i].empty() == 0)
-		i++;
-	brain->ideas[i] = idea;
+	for (i = 0 ; i < 100 ; i++)
+		if (_brain->ideas[i].empty())
+			break;
+	if (i < 100)
+		_brain->ideas[i] = idea;
+	else
+		std::cout << "Brain full" << std::endl;
 }
 
-void	Dog::show_ideas(void) const
+void	Dog::showIdeas(void) const
 {
 	int	i;
 
-	i = 0;
-	while (i < 100 && brain->ideas[i].empty() == 0)
-		std::cout << brain->ideas[i++] << std::endl;
+	for (i = 0 ; i < 100 ; i++)
+	{
+		if (_brain->ideas[i].empty())
+			break;
+		std::cout << _brain->ideas[i] << std::endl;
+	}
+	if (i == 0)
+		std::cout << "There is no idea" << std::endl;
 }

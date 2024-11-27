@@ -6,10 +6,10 @@
 
 int	main(void)
 {
-	//Animal a;
+	// Animal a;
 	Cat b;
 	Dog c;
-	//a.makeSound();
+	// a.makeSound();
 	b.makeSound();
 	c.makeSound();
 	return (0);

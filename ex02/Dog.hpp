@@ -8,7 +8,7 @@
 class	Dog : public Animal
 {
 	private:
-		Brain	*brain;
+		Brain	*_brain;
 
 	public:
 			Dog(void);
@@ -17,8 +17,8 @@ class	Dog : public Animal
 			~Dog(void);
 
 		void	makeSound(void) const;
-		void	new_idea(std::string idea);
-		void	show_ideas(void) const;
+		void	newIdea(std::string idea);
+		void	showIdeas(void) const;
 };
 
 #endif
