@@ -20,3 +20,14 @@ Ice&	Ice::operator=(const Ice& other)
 	std::cout << "Ice assignation constructor called" << std::endl;
 	return *this;
 }
+
+void	Ice::use(const ICharacter& target) const
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *";
+}
+
+Ice	*Ice::clone(void) const
+{
+	Ice *copy = new Ice(*this);
+	return copy;
+}

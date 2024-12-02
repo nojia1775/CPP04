@@ -29,9 +29,3 @@ void	AMateria ::use(ICharacter& target)
 {
 	return;
 }
-
-AMateria	*AMateria::clone(void) const
-{
-	AMateria *materia = new AMateria(_type);
-	return materia;
-}
