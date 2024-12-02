@@ -8,7 +8,7 @@
 class	IMateriaSource
 {
 	protected:
-		AMateria	*_memory[4];
+		AMateria		*_memory[4];
 
 	public:
 					IMateriaSource(void);
