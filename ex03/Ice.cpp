@@ -17,13 +17,14 @@ Ice::Ice(const Ice& other) : AMateria(other)
 
 Ice&	Ice::operator=(const Ice& other)
 {
+	(void)other;
 	std::cout << "Ice assignation constructor called" << std::endl;
 	return *this;
 }
 
-void	Ice::use(const ICharacter& target) const
+void	Ice::use(ICharacter& target)
 {
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *";
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }
 
 Ice	*Ice::clone(void) const

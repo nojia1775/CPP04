@@ -24,17 +24,9 @@ IMateriaSource::~IMateriaSource(void)
 
 IMateriaSource::IMateriaSource(const IMateriaSource& other)
 {
-	if (_memory[0])
-		delete _memory[0];
 	_memory[0] = other._memory[0]->clone();
-	if (_memory[1])
-		delete _memory[1];
 	_memory[1] = other._memory[1]->clone();
-	if (_memory[2])
-		delete _memory[2];
 	_memory[2] = other._memory[2]->clone();
-	if (_memory[3])
-		delete _memory[3];
 	_memory[3] = other._memory[3]->clone();
 	std::cout << "IMateriaSource copy contructor called" << std::endl;
 }
@@ -43,17 +35,9 @@ IMateriaSource&	IMateriaSource::operator=(const IMateriaSource& other)
 {
 	if (this != &other)
 	{
-		if (_memory[0])
-			delete _memory[0];
 		_memory[0] = other._memory[0]->clone();
-		if (_memory[1])
-			delete _memory[1];
 		_memory[1] = other._memory[1]->clone();
-		if (_memory[2])
-			delete _memory[2];
 		_memory[2] = other._memory[2]->clone();
-		if (_memory[3])
-			delete _memory[3];
 		_memory[3] = other._memory[3]->clone();
 	}
 	std::cout << "IMateriaSource assignation contructor called" << std::endl;

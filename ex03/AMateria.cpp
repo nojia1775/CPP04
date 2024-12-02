@@ -17,6 +17,7 @@ AMateria::AMateria(const AMateria& other) : _type(other._type)
 
 AMateria&	AMateria::operator=(const AMateria& other)
 {
+	(void)other;
 	return *this;	
 }	
 
@@ -27,5 +28,6 @@ const std::string&	AMateria::getType(void) const
 
 void	AMateria ::use(ICharacter& target)
 {
+	std::cout << _type << " used on " << target.getName() << std::endl;
 	return;
 }

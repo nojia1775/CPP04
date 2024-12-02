@@ -17,13 +17,14 @@ Cure::Cure(const Cure& other) : AMateria(other)
 
 Cure&	Cure::operator=(const Cure& other)
 {
+	(void)other;
 	std::cout << "Cure assignation constructor called" << std::endl;
 	return *this;
 }
 
-void	Cure::use(const ICharacter& target) const
+void	Cure::use(ICharacter& target)
 {
-	std::cout << "* heals "<< target.getName() << "'s wounds *";
+	std::cout << "* heals "<< target.getName() << "'s wounds *" << std::endl;
 }
 
 Cure	*Cure::clone(void) const
