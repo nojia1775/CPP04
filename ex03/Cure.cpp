@@ -28,6 +28,5 @@ void	Cure::use(const ICharacter& target) const
 
 Cure	*Cure::clone(void) const
 {
-	Cure *copy = new Cure(*this);
-	return copy;
+	return new Cure(*this);
 }

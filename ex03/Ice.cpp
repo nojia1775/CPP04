@@ -28,6 +28,5 @@ void	Ice::use(const ICharacter& target) const
 
 Ice	*Ice::clone(void) const
 {
-	Ice *copy = new Ice(*this);
-	return copy;
+	return new Ice(*this);
 }
